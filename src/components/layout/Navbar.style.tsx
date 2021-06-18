@@ -4,11 +4,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   navbar: {
     padding: theme.spacing(2, 6, 0),
     '& a': {
+      fontWeight: 'bold',
+      color: theme.palette.text.secondary,
       textDecoration: 'none',
       margin: theme.spacing(0.4, 2),
       display: 'inline-block',
+      transition: '0.2s ease color',
     },
     '& a:visited': {
+      color: theme.palette.text.primary,
+    },
+    '& a:hover': {
       color: theme.palette.text.primary,
     },
     '& a.active': {

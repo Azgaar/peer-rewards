@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar, Grid, Typography } from '@material-ui/core';
 import { IUser } from '../../types';
-import useStyles from './Profile.style';
 import { AVATAR_PATH } from '../../config';
 import { getInitials } from '../../utils';
+import useStyles from './Profile.style';
 
 const Profile = ({ user }: { user: IUser }): JSX.Element => {
   const classes = useStyles();
