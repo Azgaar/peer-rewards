@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import 'fontsource-roboto';
+import '@fontsource/roboto';
+import React, { Suspense } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import Spinner from './components/shared/Spinner';
+
+const Feed = React.lazy(() => import('./pages/Feed'));
+const MyRewards = React.lazy(() => import('./pages/MyRewards'));
+const Page404 = React.lazy(() => import('./pages/Page404'));
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          <Redirect exact from="/" to="/feed" />
+          <Route path="/feed" component={Feed} />
+          <Route path="/myRewards" component={MyRewards} />
+          <Route path="/*" component={Page404} />
+        </Switch>
+      </Suspense>
+    </Layout>
   );
 }
 

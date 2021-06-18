@@ -1,0 +1,30 @@
+[
+  {
+    "from": "Alex Mayers",
+    "to": "Patric Sowberg",
+    "reward": "30$",
+    "datetime": "2021-01-6T17:35:70.418Z",
+    "message": "For your great work as our manager!"
+  },
+  {
+    "from": "Slava Kotechny",
+    "to": "Forest Clearwater",
+    "reward": "5$",
+    "datetime": "2021-02-03T05:33:10.813Z",
+    "message": "Big thanks for helping me with that complex task yesterday"
+  },
+  {
+    "from": "Alex Mayers",
+    "to": "Paul Amaritas",
+    "reward": "20$",
+    "datetime": "2021-04-25T20:52:22.358Z",
+    "message": "Thanks for being around, you're really great person and collegue!"
+  },
+  {
+    "from": "John Adams",
+    "to": "Alex Mayers",
+    "reward": "30$",
+    "datetime": "2021-06-17T17:45:32.142Z",
+    "message": "I don't really want to name just one reason. I just love your work and how you add value to out team"
+  }
+]
