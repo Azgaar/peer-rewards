@@ -1,7 +1,7 @@
 [
   {
     "from": "Alex Mayers",
-    "to": "Patric Sowberg",
+    "to": "Ali Azar",
     "reward": "30$",
     "datetime": "2021-01-6T17:35:70.418Z",
     "message": "For your great work as our manager!"
@@ -12,6 +12,13 @@
     "reward": "5$",
     "datetime": "2021-02-03T05:33:10.813Z",
     "message": "Big thanks for helping me with that complex task yesterday"
+  },
+  {
+    "from": "Alex Mayers",
+    "to": "Liza Postman",
+    "reward": "20$",
+    "datetime": "2021-04-22T10:04:12.138Z",
+    "message": "God bless you for your help! Have a nice day!"
   },
   {
     "from": "Alex Mayers",
