@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Header from './Header';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import ErrorBoundary from '../providers/ErrorBoundary';
 import useStyles from './Layout.style';
@@ -9,9 +10,10 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="sm" className={classes.container}>
+    <Container maxWidth="lg" className={classes.container}>
       <Header />
-      <main>
+      <Navbar />
+      <main className={classes.main}>
         <ErrorBoundary children={children} />
       </main>
       <Footer />

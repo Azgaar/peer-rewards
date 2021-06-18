@@ -17,7 +17,7 @@ function App(): JSX.Element {
           <Switch>
             <Redirect exact from="/" to="/feed" />
             <Route path="/feed" component={Feed} />
-            <Route path="/myRewards" component={MyRewards} />
+            <Route path="/rewards" component={MyRewards} />
             <Route path="/*" component={Page404} />
           </Switch>
         </Suspense>
