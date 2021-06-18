@@ -23,6 +23,13 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingBottom: theme.spacing(1),
     },
   },
+  addButton: {
+    backgroundColor: theme.palette.background.default,
+    float: 'right',
+    height: '56px',
+    width: '56px',
+    top: '9px',
+  },
 }));
 
 export default useStyles;
