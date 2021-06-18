@@ -1,25 +1,22 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
 import useStyles from './Feed.style';
-
-const LOREM =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
 
 const Feed = (): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <>
-      {Array(10)
-        .fill(0)
-        .map((_) => (
-          <div>
-            {LOREM}
-            <br />
-            <br />
-          </div>
-        ))}
-    </>
+    <List className={classes.list}>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>{'TS'}</Avatar>
+        </ListItemAvatar>
+        <ListItemText
+          primary="For all you did for me!"
+          secondary="Alex Brandt rewarder by Alisa Moorkmowers Jan 9, 2014"
+        />
+      </ListItem>
+    </List>
   );
 };
 
