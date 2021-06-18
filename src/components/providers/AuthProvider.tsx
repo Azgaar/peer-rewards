@@ -1,10 +1,5 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
-
-interface IUser {
-  email: string;
-  firstname: string;
-  lastname: string;
-}
+import { IUser } from '../../types';
 
 export const AuthContext = React.createContext<IUser>({} as IUser);
 
