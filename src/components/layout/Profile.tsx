@@ -2,27 +2,37 @@ import React from 'react';
 import { Avatar, Grid, Typography } from '@material-ui/core';
 import { IUser } from '../../types';
 import useStyles from './Profile.style';
+import { AVATAR_PATH } from '../../config';
+import { getInitials } from '../../utils';
 
 const Profile = ({ user }: { user: IUser }): JSX.Element => {
   const classes = useStyles();
-  const { firstname, lastname, initials } = user;
+  const { firstname, lastname, image } = user;
   const fullname = `${firstname} ${lastname}`;
 
   return (
-    <Grid container item wrap={'nowrap'}>
-      <Grid className={classes.avatar} item sm={2}>
-        <Avatar alt="avatar">{initials}</Avatar>
-        <Typography variant="body1">{fullname}</Typography>
+    <Grid container spacing={6}>
+      <Grid item sm={4}>
+        {image ? (
+          <Avatar alt="avatar" src={AVATAR_PATH + image} className={classes.avatar} />
+        ) : (
+          <Avatar alt="avatar" className={classes.avatar}>
+            {firstname ? getInitials(firstname, lastname) : ''}
+          </Avatar>
+        )}
+        <Typography variant="body2" className={classes.fullName}>
+          {fullname}
+        </Typography>
       </Grid>
 
-      <Grid item sm={3}>
-        <Typography className={classes.sectionTitle}>My Rewards</Typography>
-        <Typography className={classes.sectionValue}>30$</Typography>
+      <Grid item sm={4}>
+        <Typography variant="body1">My Rewards</Typography>
+        <Typography variant="h5">$30</Typography>
       </Grid>
 
-      <Grid item sm={3}>
-        <Typography className={classes.sectionTitle}>Give</Typography>
-        <Typography className={classes.sectionValue}>100$</Typography>
+      <Grid item sm={4}>
+        <Typography variant="body1">Give</Typography>
+        <Typography variant="h5">$100</Typography>
       </Grid>
     </Grid>
   );

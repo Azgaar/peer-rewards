@@ -1,17 +1,15 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
 import { useUser } from '../providers/AuthProvider';
 import Profile from './Profile';
+import Spinner from '../shared/Spinner';
 
 const Header = (): JSX.Element => {
   const user = useUser();
-  console.log(user);
 
+  if (!user.firstname) return <Spinner />;
   return (
     <header>
-      <Container maxWidth="md">
-        <Profile user={user} />
-      </Container>
+      <Profile user={user} />
     </header>
   );
 };

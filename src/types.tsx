@@ -2,5 +2,5 @@ export interface IUser {
   email: string;
   firstname: string;
   lastname: string;
-  initials: string;
+  image: string;
 }
