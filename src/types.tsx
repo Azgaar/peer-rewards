@@ -2,7 +2,7 @@ export interface IUser {
   email: string;
   firstname: string;
   lastname: string;
-  image: string;
+  image?: string;
 }
 
 export interface IReward {

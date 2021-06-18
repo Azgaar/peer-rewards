@@ -7,7 +7,7 @@ import Spinner from '../shared/Spinner';
 import useStyles from './Content.style';
 import Container from '@material-ui/core/Container';
 import { fetchJSON } from '../../utils';
-import { IReward } from '../../types';
+import { IReward, IUser } from '../../types';
 
 const Feed = React.lazy(() => import('../../pages/Feed'));
 const MyRewards = React.lazy(() => import('../../pages/MyRewards'));
@@ -16,9 +16,11 @@ const Page404 = React.lazy(() => import('../../pages/Page404'));
 const Content = (): JSX.Element => {
   const classes = useStyles();
   const [rewards, setRewards] = useState([] as IReward[]);
+  const [users, setUsers] = useState([] as IUser[]);
 
   useEffect(() => {
     fetchJSON('/mockups/rewards.json', (json) => setRewards(json));
+    fetchJSON('/mockups/users.json', (json) => setUsers(json));
   }, []);
 
   return (
@@ -29,8 +31,12 @@ const Content = (): JSX.Element => {
         {rewards.length ? (
           <Switch>
             <Redirect exact from="/" to="/feed" />
-            <Route path="/feed" component={Feed} />
-            <Route path="/rewards" component={MyRewards} />
+            <Route path="/feed">
+              <Feed rewards={rewards} users={users} />
+            </Route>
+            <Route path="/rewards">
+              <MyRewards rewards={rewards} />
+            </Route>
             <Route path="/*" component={Page404} />
           </Switch>
         ) : (

@@ -1,21 +1,24 @@
 import React from 'react';
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
 import useStyles from './Feed.style';
+import { IReward, IUser } from '../types';
 
-const Feed = (): JSX.Element => {
+const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.Element => {
   const classes = useStyles();
 
   return (
     <List className={classes.list}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>{'TS'}</Avatar>
-        </ListItemAvatar>
-        <ListItemText
-          primary="For all you did for me!"
-          secondary="Alex Brandt rewarder by Alisa Moorkmowers Jan 9, 2014"
-        />
-      </ListItem>
+      {rewards.map((reward) => (
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar>{'TS'}</Avatar>
+          </ListItemAvatar>
+          <ListItemText
+            primary={reward.message}
+            secondary={`${reward.to} rewarded by ${reward.from} on ${reward.datetime}`}
+          />
+        </ListItem>
+      ))}
     </List>
   );
 };
