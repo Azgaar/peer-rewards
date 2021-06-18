@@ -1,15 +1,14 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
 import { IUser } from '../../types';
+import { fetchJSON } from '../../utils';
 
-export const AuthContext = React.createContext<IUser>({} as IUser);
+export const AuthContext = React.createContext({} as IUser);
 
 const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState({} as IUser);
 
   useEffect(() => {
-    fetch('/mockups/user.json')
-      .then((res) => res.json())
-      .then((json) => setUser(json));
+    fetchJSON('/mockups/user.json', (json) => setUser(json));
   }, []);
 
   return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
