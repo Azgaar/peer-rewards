@@ -19,7 +19,7 @@ export const fetchJSON = (url: string, callback: (json: any) => void) => {
       return res.json();
     })
     .then((json) => callback(json))
-    .catch((err) => console.log(err));
+    .catch((err) => console.error(err));
 };
 
 dayjs.extend(relativeTime);
