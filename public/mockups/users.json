@@ -20,26 +20,37 @@
   {
     "email": "slava.kotechny@gmail.com",
     "firstname": "Slava",
-    "lastname": "Kotechny"
+    "lastname": "Kotechny",
+    "image": "slava_kotechny.jpg"
   },
   {
     "email": "forest.clearwater@gmail.com",
     "firstname": "Forest",
-    "lastname": "Clearwater"
+    "lastname": "Clearwater",
+    "image": "forest_clearwater.jpg"
   },
   {
-    "email": "paul.amaritas@gmail.com",
-    "firstname": "Paul",
-    "lastname": "Amaritas"
+    "email": "paulina.amaritas@gmail.com",
+    "firstname": "Paulina",
+    "lastname": "Amaritas",
+    "image": "paulina_amaritas.jpg"
   },
   {
     "email": "john.adams@gmail.com",
     "firstname": "John",
-    "lastname": "Adams"
+    "lastname": "Adams",
+    "image": "john_adams.jpg"
   },
   {
     "email": "alisa.moorkmowers@gmail.com",
-    "firstname": "alisa",
-    "lastname": "moorkmowers"
+    "firstname": "Alisa",
+    "lastname": "Moorkmowers",
+    "image": "alisa_moorkmowers.jpg"
+  },
+  {
+    "email": "ben.awad@gmail.com",
+    "firstname": "Ben",
+    "lastname": "Awad",
+    "image": "ben_awad.jpg"
   }
 ]

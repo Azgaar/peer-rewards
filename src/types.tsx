@@ -6,8 +6,8 @@ export interface IUser {
 }
 
 export interface IReward {
-  from: string;
-  to: string;
+  from: IUser;
+  to: IUser;
   reward: string;
   datetime: string;
   message: string;

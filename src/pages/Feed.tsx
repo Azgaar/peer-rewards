@@ -1,24 +1,31 @@
 import React from 'react';
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+import UserAvatar from '../components/shared/UserAvatar';
 import useStyles from './Feed.style';
 import { IReward, IUser } from '../types';
+import { getFullName } from '../utils';
 
 const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.Element => {
   const classes = useStyles();
 
   return (
     <List className={classes.list}>
-      {rewards.map((reward) => (
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar>{'TS'}</Avatar>
-          </ListItemAvatar>
-          <ListItemText
-            primary={reward.message}
-            secondary={`${reward.to} rewarded by ${reward.from} on ${reward.datetime}`}
-          />
-        </ListItem>
-      ))}
+      {rewards.map((reward) => {
+        const from = getFullName(reward.from);
+        const to = getFullName(reward.to);
+
+        return (
+          <ListItem>
+            <ListItemAvatar>
+              <UserAvatar user={reward.to} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={reward.message}
+              secondary={`${to} rewarded by ${from} on ${reward.datetime}`}
+            />
+          </ListItem>
+        );
+      })}
     </List>
   );
 };

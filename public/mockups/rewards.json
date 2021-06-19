@@ -1,44 +1,121 @@
 [
   {
-    "from": "Alex Mayers",
-    "to": "Ali Azar",
+    "from": {
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
+    },
+    "to": {
+      "email": "ali.azar@gmail.com",
+      "firstname": "Ali",
+      "lastname": "Azar",
+      "image": "ali_azar.jpg"
+    },
     "reward": "30$",
     "datetime": "2021-01-6T17:35:70.418Z",
     "message": "For your great work as our manager!"
   },
   {
-    "from": "Slava Kotechny",
-    "to": "Forest Clearwater",
+    "from": {
+      "email": "slava.kotechny@gmail.com",
+      "firstname": "Slava",
+      "lastname": "Kotechny",
+      "image": "slava_kotechny.jpg"
+    },
+    "to": {
+      "email": "forest.clearwater@gmail.com",
+      "firstname": "Forest",
+      "lastname": "Clearwater",
+      "image": "forest_clearwater.jpg"
+    },
     "reward": "5$",
     "datetime": "2021-02-03T05:33:10.813Z",
     "message": "Big thanks for helping me with that complex task yesterday"
   },
   {
-    "from": "Alex Mayers",
-    "to": "Liza Postman",
+    "from": {
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
+    },
+    "to": {
+      "email": "liza.postman@gmail.com",
+      "firstname": "Liza",
+      "lastname": "Postman",
+      "image": "liza_postman.jpg"
+    },
     "reward": "20$",
     "datetime": "2021-04-22T10:04:12.138Z",
     "message": "God bless you for your help! Have a nice day!"
   },
   {
-    "from": "Alex Mayers",
-    "to": "Paul Amaritas",
+    "from": {
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
+    },
+    "to": {
+      "email": "paulina.amaritas@gmail.com",
+      "firstname": "Paulina",
+      "lastname": "Amaritas",
+      "image": "paulina_amaritas.jpg"
+    },
     "reward": "20$",
     "datetime": "2021-04-25T20:52:22.358Z",
     "message": "Thanks for being around, you're really great person and collegue!"
   },
   {
-    "from": "John Adams",
-    "to": "Alex Mayers",
+    "from": {
+      "email": "john.adams@gmail.com",
+      "firstname": "John",
+      "lastname": "Adams",
+      "image": "john_adams.jpg"
+    },
+    "to": {
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
+    },
     "reward": "30$",
     "datetime": "2021-06-17T17:45:32.142Z",
     "message": "I don't really want to name just one reason. I just love your work and how you add value to out team"
   },
   {
-    "from": "Alisa Moorkmowers",
-    "to": "Alex Brandt",
+    "from": {
+      "email": "alisa.moorkmowers@gmail.com",
+      "firstname": "Alisa",
+      "lastname": "Moorkmowers",
+      "image": "alisa_moorkmowers.jpg"
+    },
+    "to": {
+      "email": "ben.awad@gmail.com",
+      "firstname": "Ben",
+      "lastname": "Awad",
+      "image": "ben_awad.jpg"
+    },
     "reward": "55$",
-    "datetime": "2021-06-19T19:57:22.131Z",
+    "datetime": "2021-06-18T19:57:22.131Z",
     "message": "For all you did for our team and project. Hope to work more with you next year"
+  },
+  {
+    "from": {
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
+    },
+    "to": {
+      "email": "ben.awad@gmail.com",
+      "firstname": "Ben",
+      "lastname": "Awad",
+      "image": "ben_awad.jpg"
+    },
+    "reward": "5$",
+    "datetime": "2021-06-19T12:01:12.856Z",
+    "message": "Thanks for being such a nice person"
   }
 ]

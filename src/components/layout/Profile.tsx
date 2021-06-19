@@ -1,26 +1,18 @@
 import React from 'react';
-import { Avatar, Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { IUser } from '../../types';
-import { AVATAR_PATH } from '../../config';
-import { getInitials } from '../../utils';
 import useStyles from './Profile.style';
+import UserAvatar from '../shared/UserAvatar';
+import { getFullName } from '../../utils';
 
 const Profile = ({ user }: { user: IUser }): JSX.Element => {
   const classes = useStyles();
-  const { firstname, lastname, image } = user;
-  const fullname = `${firstname} ${lastname}`;
 
   return (
     <>
       <Grid container spacing={6} alignItems="center">
         <Grid item sm={2}>
-          {image ? (
-            <Avatar alt="avatar" src={AVATAR_PATH + image} className={classes.avatar} />
-          ) : (
-            <Avatar alt="avatar" className={classes.avatar}>
-              {firstname ? getInitials(firstname, lastname) : ''}
-            </Avatar>
-          )}
+          <UserAvatar user={user} size="big" />
         </Grid>
 
         <Grid item sm={3}>
@@ -34,7 +26,7 @@ const Profile = ({ user }: { user: IUser }): JSX.Element => {
         </Grid>
       </Grid>
       <Typography variant="body2" className={classes.fullName}>
-        {fullname}
+        {getFullName(user)}
       </Typography>
     </>
   );
