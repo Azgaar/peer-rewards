@@ -1,9 +1,13 @@
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
-  fullName: {
+  big: {
     width: theme.spacing(12),
-    textAlign: 'center',
+    height: theme.spacing(12),
+  },
+  small: {
+    width: theme.spacing(5.5),
+    height: theme.spacing(5.5),
   },
 }));
 

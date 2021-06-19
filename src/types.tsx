@@ -2,12 +2,13 @@ export interface IUser {
   email: string;
   firstname: string;
   lastname: string;
-  image: string;
+  image?: string;
 }
 
 export interface IReward {
-  from: string;
-  to: string;
+  id: number;
+  from: IUser;
+  to: IUser;
   reward: string;
   datetime: string;
   message: string;

@@ -1,6 +1,6 @@
 # Peer Rewards
 
-Test application that allows employees to receive and assign awards.
+Client-side application that allows employees to receive and assign awards.
 
 # Tech stack
 
@@ -8,7 +8,7 @@ This is a [React](https://reactjs.org/) application bootstrapped with [Create Re
 
 It uses [Material UI](https://material-ui.com/) as UI framework as it helps to start immediately building modern-looking GUI without significant efforts or customization.
 
-[Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup) are used for fast and well-tested form validation.
+[Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup) are used for fast and well-tested form validation. [Day.js](https://day.js.org/) is used for dates formatting.
 
 Tests are ran using [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Jest](https://jestjs.io/).
 
