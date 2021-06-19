@@ -4,6 +4,7 @@ import Content from './components/layout/Content';
 import { AuthProvider } from './components/providers/AuthProvider';
 import ErrorBoundary from './components/providers/ErrorBoundary';
 import Spinner from './components/shared/Spinner';
+import './styles/global.css';
 
 function App(): JSX.Element {
   return (
