@@ -24,10 +24,10 @@
       "image": "slava_kotechny.jpg"
     },
     "to": {
-      "email": "forest.clearwater@gmail.com",
-      "firstname": "Forest",
-      "lastname": "Clearwater",
-      "image": "forest_clearwater.jpg"
+      "email": "alex.mayers@gmail.com",
+      "firstname": "Alex",
+      "lastname": "Mayers",
+      "image": "alex_mayers.jpg"
     },
     "reward": "5$",
     "datetime": "2021-02-03T05:33:10.813Z",
@@ -109,10 +109,10 @@
       "image": "alex_mayers.jpg"
     },
     "to": {
-      "email": "ben.awad@gmail.com",
-      "firstname": "Ben",
-      "lastname": "Awad",
-      "image": "ben_awad.jpg"
+      "email": "slava.kotechny@gmail.com",
+      "firstname": "Slava",
+      "lastname": "Kotechny",
+      "image": "slava_kotechny.jpg"
     },
     "reward": "5$",
     "datetime": "2021-06-19T12:01:12.856Z",
