@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { validationSchema } from './validationSchema';
-import { Button, Container, Grid, InputAdornment, TextField } from '@material-ui/core';
+import { Button, Container, Grid, InputAdornment, TextField, Typography } from '@material-ui/core';
 import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { useUser } from '../../providers/AuthProvider';
@@ -9,6 +9,7 @@ import { CURRENCY } from '../../../config';
 import { fetchJSON, getFullName } from '../../../utils';
 import { IRewardForm, IUser } from '../../../types';
 import useStyles from '../Dialog.style';
+import UserAvatar from '../../shared/UserAvatar';
 
 type AddRewardProps = {
   closeDialog: () => void;
@@ -52,18 +53,38 @@ const AddReward = ({ closeDialog, addReward }: AddRewardProps): JSX.Element => {
                   getOptionLabel={(user) => getFullName(user)}
                   value={values.to}
                   onChange={handleAutocompleteChange}
+                  renderOption={(user) => (
+                    <>
+                      <UserAvatar user={user} size="smaller" />
+                      <span className={classes.optionName}>{getFullName(user)}</span>
+                    </>
+                  )}
                   renderInput={(params) => (
                     <TextField
+                      {...params}
                       variant="outlined"
                       label="Person"
                       placeholder="Person to reward"
                       name="to"
-                      {...params}
+                      InputProps={{
+                        ...params.InputProps,
+                        startAdornment: (
+                          <>
+                            {values.to && (
+                              <InputAdornment position="start">
+                                <UserAvatar user={values.to as unknown as IUser} size="smaller" />
+                              </InputAdornment>
+                            )}
+                            {params.InputProps.startAdornment}
+                          </>
+                        ),
+                      }}
                       required
                       error={touched.to && Boolean(errors.to)}
                       helperText={touched.to && errors.to}
                     />
                   )}
+                  blurOnSelect
                 />
               </Grid>
 

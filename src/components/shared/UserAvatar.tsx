@@ -7,7 +7,7 @@ import useStyles from './UserAvatar.style';
 
 type UserAvatarProps = {
   user: IUser;
-  size?: 'big' | 'small';
+  size?: 'big' | 'small' | 'smaller';
 };
 
 const UserAvatar = ({ user, size = 'small' }: UserAvatarProps): JSX.Element => {

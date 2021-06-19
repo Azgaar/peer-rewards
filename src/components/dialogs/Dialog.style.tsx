@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   buttons: {
     marginTop: theme.spacing(1),
   },
+  optionName: {
+    marginLeft: theme.spacing(1.5),
+  },
 }));
 
 export default useStyles;

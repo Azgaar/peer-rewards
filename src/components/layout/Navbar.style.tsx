@@ -9,13 +9,15 @@ const useStyles = makeStyles((theme: Theme) => ({
       textDecoration: 'none',
       margin: theme.spacing(0.4, 2.25),
       display: 'inline-block',
-      transition: '0.2s ease color',
+      transition: '0.3s ease color, border',
     },
     '& a:visited': {
       color: theme.palette.text.primary,
     },
     '& a:hover': {
-      color: theme.palette.text.primary,
+      color: '#555',
+      borderBottom: '1px solid ' + theme.palette.primary.main,
+      paddingBottom: theme.spacing(1),
     },
     '& a.active': {
       color: theme.palette.primary.main,
