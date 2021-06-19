@@ -1,17 +1,17 @@
 import React from 'react';
 import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
 import UserAvatar from '../components/shared/UserAvatar';
-import useStyles from './List.style';
-import { IReward } from '../types';
 import { getFullName, getRelativeDate } from '../utils';
+import { CURRENCY } from '../config';
+import { IReward } from '../types';
+import useStyles from './List.style';
 
-const Feed = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
+const GivenRewards = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
   const classes = useStyles();
 
   return (
     <List className={classes.list}>
-      {rewards.map(({ id, from, to, datetime, message }) => {
-        const rewarder = getFullName(from);
+      {rewards.map(({ id, to, reward, datetime, message }) => {
         const rewardee = getFullName(to);
         const date = getRelativeDate(datetime);
 
@@ -22,7 +22,16 @@ const Feed = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
             </ListItemAvatar>
             <ListItemText
               primary={message}
-              secondary={`${rewardee} rewarded by ${rewarder} ${date}`}
+              secondary={
+                <span>
+                  {`You rewarded ${rewardee} `}
+                  <b>
+                    {CURRENCY}
+                    {reward}
+                  </b>
+                  {` ${date}`}
+                </span>
+              }
             />
           </ListItem>
         );
@@ -31,4 +40,4 @@ const Feed = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
   );
 };
 
-export default Feed;
+export default GivenRewards;

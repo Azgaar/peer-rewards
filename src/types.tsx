@@ -9,7 +9,7 @@ export interface IReward {
   id: number;
   from: IUser;
   to: IUser;
-  reward: string;
+  reward: number;
   datetime: string;
   message: string;
 }
