@@ -13,7 +13,7 @@
       "lastname": "Kotechny",
       "image": "slava_kotechny.jpg"
     },
-    "reward": "5$",
+    "reward": 5,
     "datetime": "2021-06-19T11:15:14.856Z",
     "message": "Thanks for being such a nice person"
   },
@@ -31,7 +31,7 @@
       "lastname": "Awad",
       "image": "ben_awad.jpg"
     },
-    "reward": "55$",
+    "reward": 55,
     "datetime": "2021-06-18T19:57:22.131Z",
     "message": "For all you did for our team and project. Hope to work more with you next year"
   },
@@ -49,7 +49,7 @@
       "lastname": "Mayers",
       "image": "alex_mayers.jpg"
     },
-    "reward": "30$",
+    "reward": 30,
     "datetime": "2021-06-17T17:45:32.142Z",
     "message": "I don't really want to name just one reason. I just love your work and how you add value to out team"
   },
@@ -67,7 +67,7 @@
       "lastname": "Amaritas",
       "image": "paulina_amaritas.jpg"
     },
-    "reward": "20$",
+    "reward": 20,
     "datetime": "2021-04-25T20:52:22.358Z",
     "message": "Thanks for being around, you're really great person and collegue!"
   },
@@ -85,7 +85,7 @@
       "lastname": "Postman",
       "image": "liza_postman.jpg"
     },
-    "reward": "20$",
+    "reward": 20,
     "datetime": "2021-04-22T10:04:12.138Z",
     "message": "God bless you for your help! Have a nice day!"
   },
@@ -103,7 +103,7 @@
       "lastname": "Mayers",
       "image": "alex_mayers.jpg"
     },
-    "reward": "5$",
+    "reward": 5,
     "datetime": "2021-02-03T05:33:10.813Z",
     "message": "Big thanks for helping me with that complex task yesterday"
   },
@@ -121,7 +121,7 @@
       "lastname": "Azar",
       "image": "ali_azar.jpg"
     },
-    "reward": "30$",
+    "reward": 30,
     "datetime": "2021-01-11T16:35:14.152Z",
     "message": "For your great work as our manager!"
   }
