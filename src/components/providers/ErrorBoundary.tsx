@@ -25,8 +25,8 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <Container maxWidth="sm">
-          <h1>Sorry... there was an error</h1>
-          <h2>Try to refresh the page</h2>
+          <h1>Unhandled error</h1>
+          <h2>Please refresh the page</h2>
         </Container>
       );
     }
