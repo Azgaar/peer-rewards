@@ -20,7 +20,7 @@ const Navbar = (): JSX.Element => {
       <Fab aria-label="add reward" onClick={openDialog} className={classes.addButton}>
         <Add />
       </Fab>
-      <AddReward open={isOpen} closeDialog={closeDialog} />
+      {isOpen && <AddReward closeDialog={closeDialog} />}
     </nav>
   );
 };

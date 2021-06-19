@@ -13,3 +13,9 @@ export interface IReward {
   datetime: string;
   message: string;
 }
+
+export interface IRewardForm {
+  to: IUser | null;
+  reward: number;
+  message: string;
+}

@@ -8,10 +8,7 @@ const userShema = Yup.object({
 });
 
 export const validationSchema = Yup.object({
-  id: Yup.number().required(),
-  from: userShema,
   to: userShema.typeError('Please select a person'),
-  reward: Yup.number().moreThan(0).required('Reward must be greater than 0'),
-  datetime: Yup.string().required(),
+  reward: Yup.number().moreThan(0, 'Reward must be greater than 0'),
   message: Yup.string().required('Please add a message'),
 });
