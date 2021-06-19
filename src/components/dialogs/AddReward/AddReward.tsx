@@ -44,7 +44,7 @@ const AddReward = ({ open, closeDialog }: AddRewardProps): JSX.Element => {
 
   return (
     <Dialog open={open} onClose={closeDialog} aria-labelledby="add-reward-dialog">
-      <Container maxWidth="xs">
+      <Container maxWidth="xs" className={classes.container}>
         <DialogTitle>Reward a person</DialogTitle>
         <DialogContent>
           <form noValidate onSubmit={formik.handleSubmit}>
@@ -99,20 +99,18 @@ const AddReward = ({ open, closeDialog }: AddRewardProps): JSX.Element => {
               </Grid>
             </Grid>
 
-            <Box mt={1} mb={2}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <Button fullWidth variant="contained" color="primary">
-                    Cancel
-                  </Button>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Button type="submit" fullWidth variant="contained" color="primary">
-                    Reward
-                  </Button>
-                </Grid>
+            <Grid container spacing={2} className={classes.buttons}>
+              <Grid item xs={12} sm={6}>
+                <Button onClick={closeDialog} fullWidth variant="contained" color="secondary">
+                  Cancel
+                </Button>
               </Grid>
-            </Box>
+              <Grid item xs={12} sm={6}>
+                <Button type="submit" fullWidth variant="contained" color="primary">
+                  Reward
+                </Button>
+              </Grid>
+            </Grid>
           </form>
         </DialogContent>
       </Container>
