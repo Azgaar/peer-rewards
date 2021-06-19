@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Navbar from './Navbar';
-import Footer from './Footer';
 import Spinner from '../shared/Spinner';
 import Container from '@material-ui/core/Container';
 import { useUser } from '../providers/AuthProvider';
@@ -64,7 +63,6 @@ const Content = (): JSX.Element => {
           <Spinner />
         )}
       </main>
-      <Footer />
     </Container>
   );
 };
