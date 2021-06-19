@@ -1,11 +1,11 @@
 import React from 'react';
 import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
 import UserAvatar from '../components/shared/UserAvatar';
-import useStyles from './Feed.style';
-import { IReward, IUser } from '../types';
+import useStyles from './List.style';
+import { IReward } from '../types';
 import { getFullName, getRelativeDate } from '../utils';
 
-const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.Element => {
+const Feed = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
   const classes = useStyles();
 
   return (

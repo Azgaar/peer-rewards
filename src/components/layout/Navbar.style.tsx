@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontWeight: 'bold',
       color: theme.palette.text.secondary,
       textDecoration: 'none',
-      margin: theme.spacing(0.4, 2),
+      margin: theme.spacing(0.4, 2.25),
       display: 'inline-block',
       transition: '0.2s ease color',
     },

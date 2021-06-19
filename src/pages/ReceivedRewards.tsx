@@ -1,9 +1,34 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+import UserAvatar from '../components/shared/UserAvatar';
+import useStyles from './List.style';
 import { IReward } from '../types';
+import { getFullName, getRelativeDate } from '../utils';
 
 const ReceivedRewards = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
-  return <Container maxWidth="md">ReceivedRewards</Container>;
+  const classes = useStyles();
+
+  return (
+    <List className={classes.list}>
+      {rewards.map((reward) => {
+        const from = getFullName(reward.from);
+        const to = getFullName(reward.to);
+        const date = getRelativeDate(reward.datetime);
+
+        return (
+          <ListItem key={reward.id}>
+            <ListItemAvatar>
+              <UserAvatar user={reward.to} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={reward.message}
+              secondary={`${to} rewarded by ${from} ${date}`}
+            />
+          </ListItem>
+        );
+      })}
+    </List>
+  );
 };
 
 export default ReceivedRewards;
