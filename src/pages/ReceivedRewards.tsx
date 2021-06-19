@@ -10,19 +10,24 @@ const ReceivedRewards = ({ rewards }: { rewards: IReward[] }): JSX.Element => {
 
   return (
     <List className={classes.list}>
-      {rewards.map((reward) => {
-        const from = getFullName(reward.from);
-        const to = getFullName(reward.to);
-        const date = getRelativeDate(reward.datetime);
+      {rewards.map(({ id, from, reward, datetime, message }) => {
+        const rewarder = getFullName(from);
+        const date = getRelativeDate(datetime);
 
         return (
-          <ListItem key={reward.id}>
+          <ListItem key={id}>
             <ListItemAvatar>
-              <UserAvatar user={reward.to} />
+              <UserAvatar user={from} />
             </ListItemAvatar>
             <ListItemText
-              primary={reward.message}
-              secondary={`${to} rewarded by ${from} ${date}`}
+              primary={message}
+              secondary={
+                <span>
+                  {'You are rewarded '}
+                  <b>{reward}</b>
+                  {` by ${rewarder} ${date}`}
+                </span>
+              }
             />
           </ListItem>
         );
