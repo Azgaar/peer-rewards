@@ -10,18 +10,18 @@ const Profile = ({ user }: { user: IUser }): JSX.Element => {
 
   return (
     <>
-      <Grid container spacing={6} alignItems="center">
+      <Grid container spacing={4} alignItems="center">
         <Grid item sm={2}>
           <UserAvatar user={user} size="big" />
         </Grid>
 
-        <Grid item sm={3}>
-          <Typography variant="body1">My Rewards</Typography>
+        <Grid item sm={2}>
+          <Typography variant="body1">Received</Typography>
           <Typography variant="h5">$30</Typography>
         </Grid>
 
-        <Grid item sm={3}>
-          <Typography variant="body1">Give</Typography>
+        <Grid item sm={2}>
+          <Typography variant="body1">Given</Typography>
           <Typography variant="h5">$100</Typography>
         </Grid>
       </Grid>

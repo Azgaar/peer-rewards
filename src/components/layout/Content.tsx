@@ -11,7 +11,8 @@ import { IReward, IUser } from '../../types';
 import useStyles from './Content.style';
 
 const Feed = React.lazy(() => import('../../pages/Feed'));
-const MyRewards = React.lazy(() => import('../../pages/MyRewards'));
+const ReceivedRewards = React.lazy(() => import('../../pages/ReceivedRewards'));
+const GivenRewards = React.lazy(() => import('../../pages/GivenRewards'));
 const Page404 = React.lazy(() => import('../../pages/Page404'));
 
 const Content = (): JSX.Element => {
@@ -19,6 +20,9 @@ const Content = (): JSX.Element => {
   const user = useUser();
   const [rewards, setRewards] = useState([] as IReward[]);
   const [users, setUsers] = useState([] as IUser[]);
+
+  const receivedRewards = rewards.filter((reward) => reward.to.email === user.email);
+  const givenRewards = rewards.filter((reward) => reward.from.email === user.email);
 
   useEffect(() => {
     fetchJSON('/mockups/rewards.json', (json) => setRewards(json));
@@ -36,8 +40,11 @@ const Content = (): JSX.Element => {
             <Route path="/feed">
               <Feed rewards={rewards} users={users} />
             </Route>
-            <Route path="/rewards">
-              <MyRewards rewards={rewards} />
+            <Route path="/rewards/received">
+              <ReceivedRewards rewards={receivedRewards} />
+            </Route>
+            <Route path="/rewards/given">
+              <GivenRewards rewards={givenRewards} />
             </Route>
             <Route path="/*" component={Page404} />
           </Switch>

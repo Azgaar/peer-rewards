@@ -11,7 +11,8 @@ const Navbar = (): JSX.Element => {
   return (
     <nav className={classes.navbar}>
       <NavLink to="/feed">Feed</NavLink>
-      <NavLink to="/rewards">My Rewards</NavLink>
+      <NavLink to="/rewards/received">Received</NavLink>
+      <NavLink to="/rewards/given">Given</NavLink>
       <Fab aria-label="add reward" className={classes.addButton}>
         <Add />
       </Fab>
