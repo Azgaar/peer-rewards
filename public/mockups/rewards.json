@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "from": {
       "email": "alex.mayers@gmail.com",
       "firstname": "Alex",
@@ -17,6 +18,7 @@
     "message": "For your great work as our manager!"
   },
   {
+    "id": 1,
     "from": {
       "email": "slava.kotechny@gmail.com",
       "firstname": "Slava",
@@ -34,6 +36,7 @@
     "message": "Big thanks for helping me with that complex task yesterday"
   },
   {
+    "id": 2,
     "from": {
       "email": "alex.mayers@gmail.com",
       "firstname": "Alex",
@@ -51,6 +54,7 @@
     "message": "God bless you for your help! Have a nice day!"
   },
   {
+    "id": 3,
     "from": {
       "email": "alex.mayers@gmail.com",
       "firstname": "Alex",
@@ -68,6 +72,7 @@
     "message": "Thanks for being around, you're really great person and collegue!"
   },
   {
+    "id": 4,
     "from": {
       "email": "john.adams@gmail.com",
       "firstname": "John",
@@ -85,6 +90,7 @@
     "message": "I don't really want to name just one reason. I just love your work and how you add value to out team"
   },
   {
+    "id": 5,
     "from": {
       "email": "alisa.moorkmowers@gmail.com",
       "firstname": "Alisa",
@@ -102,6 +108,7 @@
     "message": "For all you did for our team and project. Hope to work more with you next year"
   },
   {
+    "id": 6,
     "from": {
       "email": "alex.mayers@gmail.com",
       "firstname": "Alex",

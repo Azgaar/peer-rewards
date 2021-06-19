@@ -15,7 +15,7 @@ const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.E
         const to = getFullName(reward.to);
 
         return (
-          <ListItem>
+          <ListItem key={reward.id}>
             <ListItemAvatar>
               <UserAvatar user={reward.to} />
             </ListItemAvatar>

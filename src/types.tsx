@@ -6,6 +6,7 @@ export interface IUser {
 }
 
 export interface IReward {
+  id: number;
   from: IUser;
   to: IUser;
   reward: string;
