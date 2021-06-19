@@ -4,13 +4,19 @@ import Spinner from '../shared/Spinner';
 import useStyles from './Header.style';
 import { IUser } from '../../types';
 
-const Header = ({ user }: { user: IUser }): JSX.Element => {
+type HeaderProps = {
+  user: IUser;
+  received: number;
+  given: number;
+};
+
+const Header = ({ user, received, given }: HeaderProps): JSX.Element => {
   const classes = useStyles();
 
   if (!user.firstname) return <Spinner />;
   return (
     <header className={classes.header}>
-      <Profile user={user} />
+      <Profile user={user} received={received} given={given} />
     </header>
   );
 };

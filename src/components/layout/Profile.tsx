@@ -4,8 +4,15 @@ import { IUser } from '../../types';
 import useStyles from './Profile.style';
 import UserAvatar from '../shared/UserAvatar';
 import { getFullName } from '../../utils';
+import { CURRENCY } from '../../config';
 
-const Profile = ({ user }: { user: IUser }): JSX.Element => {
+type ProfileProps = {
+  user: IUser;
+  received: number;
+  given: number;
+};
+
+const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -17,12 +24,18 @@ const Profile = ({ user }: { user: IUser }): JSX.Element => {
 
         <Grid item sm={2}>
           <Typography variant="body1">Received</Typography>
-          <Typography variant="h5">$30</Typography>
+          <Typography variant="h5">
+            {CURRENCY}
+            {received}
+          </Typography>
         </Grid>
 
         <Grid item sm={2}>
           <Typography variant="body1">Given</Typography>
-          <Typography variant="h5">$100</Typography>
+          <Typography variant="h5">
+            {CURRENCY}
+            {given}
+          </Typography>
         </Grid>
       </Grid>
       <Typography variant="body2" className={classes.fullName}>
