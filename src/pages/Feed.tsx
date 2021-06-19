@@ -3,7 +3,7 @@ import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
 import UserAvatar from '../components/shared/UserAvatar';
 import useStyles from './Feed.style';
 import { IReward, IUser } from '../types';
-import { getFullName } from '../utils';
+import { getFullName, getRelativeDate } from '../utils';
 
 const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.Element => {
   const classes = useStyles();
@@ -13,6 +13,7 @@ const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.E
       {rewards.map((reward) => {
         const from = getFullName(reward.from);
         const to = getFullName(reward.to);
+        const date = getRelativeDate(reward.datetime);
 
         return (
           <ListItem key={reward.id}>
@@ -21,7 +22,7 @@ const Feed = ({ rewards, users }: { rewards: IReward[]; users: IUser[] }): JSX.E
             </ListItemAvatar>
             <ListItemText
               primary={reward.message}
-              secondary={`${to} rewarded by ${from} on ${reward.datetime}`}
+              secondary={`${to} rewarded by ${from} ${date}`}
             />
           </ListItem>
         );

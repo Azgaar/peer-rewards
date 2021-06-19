@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { IUser } from './types';
 
 export const getFullName = (user: IUser): string => `${user.firstname} ${user.lastname}`;
@@ -19,3 +21,6 @@ export const fetchJSON = (url: string, callback: (json: any) => void) => {
     .then((json) => callback(json))
     .catch((err) => console.log(err));
 };
+
+dayjs.extend(relativeTime);
+export const getRelativeDate = (date: string) => dayjs().to(dayjs(date));
