@@ -5,8 +5,13 @@ import { Fab } from '@material-ui/core';
 import Add from '../icons/Add';
 import AddReward from '../dialogs/AddReward/AddReward';
 import useStyles from './Navbar.style';
+import { IRewardForm } from '../../types';
 
-const Navbar = (): JSX.Element => {
+type NavbarProps = {
+  addReward: (reward: IRewardForm) => void;
+};
+
+const Navbar = ({ addReward }: NavbarProps): JSX.Element => {
   const classes = useStyles();
   const [isOpen, setOpen] = useState(false);
   const openDialog = () => setOpen(true);
@@ -20,7 +25,7 @@ const Navbar = (): JSX.Element => {
       <Fab aria-label="add reward" onClick={openDialog} className={classes.addButton}>
         <Add />
       </Fab>
-      {isOpen && <AddReward closeDialog={closeDialog} />}
+      {isOpen && <AddReward closeDialog={closeDialog} addReward={addReward} />}
     </nav>
   );
 };

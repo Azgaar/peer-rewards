@@ -7,7 +7,7 @@ import Spinner from '../shared/Spinner';
 import Container from '@material-ui/core/Container';
 import { useUser } from '../providers/AuthProvider';
 import { fetchJSON } from '../../utils';
-import { IReward } from '../../types';
+import { IReward, IRewardForm } from '../../types';
 import useStyles from './Content.style';
 
 const Feed = React.lazy(() => import('../../pages/Feed'));
@@ -26,6 +26,17 @@ const Content = (): JSX.Element => {
   const totalReceived = receivedRewards.reduce((total, value) => (total += value.reward), 0);
   const totalGiven = givenRewards.reduce((total, value) => (total += value.reward), 0);
 
+  const addReward = (rewardData: IRewardForm) => {
+    const { from, to, reward, message } = rewardData;
+    if (!to) return;
+
+    const id = rewards.length;
+    const datetime = new Date().toISOString();
+    const newReward: IReward = { id, from, to, reward, message, datetime };
+
+    setRewards((rewards) => [newReward, ...rewards]);
+  };
+
   useEffect(() => {
     fetchJSON('/mockups/rewards.json', (json) => setRewards(json));
   }, []);
@@ -33,7 +44,7 @@ const Content = (): JSX.Element => {
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Header user={user} received={totalReceived} given={totalGiven} />
-      <Navbar />
+      <Navbar addReward={addReward} />
       <main className={classes.main}>
         {rewards.length ? (
           <Switch>

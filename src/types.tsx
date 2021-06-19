@@ -15,6 +15,7 @@ export interface IReward {
 }
 
 export interface IRewardForm {
+  from: IUser;
   to: IUser | null;
   reward: number;
   message: string;
