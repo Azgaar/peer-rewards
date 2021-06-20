@@ -1,6 +1,9 @@
 # Peer Rewards
 
-Client-side application that allows employees to receive and assign awards.
+Client-side application that allows employees to receive and assign awards. The app is available at [peer-rewards.netlify.app](https://peer-rewards.netlify.app/).
+
+![peer-review-screenshot](https://user-images.githubusercontent.com/26469650/122673382-e597bd00-d1d8-11eb-9167-3c08164320e2.png)
+
 
 # Tech stack
 
