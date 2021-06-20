@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { validationSchema } from './validationSchema';
-import { Button, Container, Grid, InputAdornment, TextField, Typography } from '@material-ui/core';
+import { Button, Container, Grid, InputAdornment, TextField } from '@material-ui/core';
 import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { useUser } from '../../providers/AuthProvider';
