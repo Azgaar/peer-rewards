@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 import Header from './Header';
@@ -20,11 +20,14 @@ const Content = (): JSX.Element => {
   const user = useUser();
   const [rewards, setRewards] = useState([] as IReward[]);
 
-  const receivedRewards = rewards.filter((reward) => reward.to.email === user.email);
-  const givenRewards = rewards.filter((reward) => reward.from.email === user.email);
-
-  const totalReceived = receivedRewards.reduce((total, value) => (total += value.reward), 0);
-  const totalGiven = givenRewards.reduce((total, value) => (total += value.reward), 0);
+  const [receivedRewards, givenRewards, totalReceived, totalGiven] = useMemo(() => {
+    if (!user.email || !rewards.length) return [[], [], 0, 0];
+    const received = rewards.filter((reward) => reward.to.email === user.email);
+    const given = rewards.filter((reward) => reward.from.email === user.email);
+    const receivedSumm = received.reduce((total, value) => (total += value.reward), 0);
+    const givenSumm = given.reduce((total, value) => (total += value.reward), 0);
+    return [received, given, receivedSumm, givenSumm];
+  }, [rewards, user.email]);
 
   const addReward = (rewardData: IRewardForm) => {
     const { from, to, reward, message } = rewardData;
@@ -41,33 +44,30 @@ const Content = (): JSX.Element => {
     fetchJSON('/mockups/rewards.json', (json) => setRewards(json));
   }, []);
 
+  if (!user.email || !rewards.length) return <Spinner />;
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Header user={user} received={totalReceived} given={totalGiven} />
       <Navbar addReward={addReward} />
       <main className={classes.main}>
-        {rewards.length ? (
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
-            className={classes.switch}
-          >
-            <Redirect exact from="/" to="/feed" />
-            <Route path="/feed">
-              <Feed rewards={rewards} />
-            </Route>
-            <Route path="/rewards/received">
-              <ReceivedRewards rewards={receivedRewards} />
-            </Route>
-            <Route path="/rewards/given">
-              <GivenRewards rewards={givenRewards} />
-            </Route>
-            <Route path="/*" component={Page404} />
-          </AnimatedSwitch>
-        ) : (
-          <Spinner />
-        )}
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 0 }}
+          atActive={{ opacity: 1 }}
+          className={classes.switch}
+        >
+          <Redirect exact from="/" to="/feed" />
+          <Route path="/feed">
+            <Feed rewards={rewards} />
+          </Route>
+          <Route path="/rewards/received">
+            <ReceivedRewards rewards={receivedRewards} />
+          </Route>
+          <Route path="/rewards/given">
+            <GivenRewards rewards={givenRewards} />
+          </Route>
+          <Route path="/*" component={Page404} />
+        </AnimatedSwitch>
       </main>
     </Container>
   );
