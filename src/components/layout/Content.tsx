@@ -22,11 +22,11 @@ const Content = (): JSX.Element => {
 
   const [receivedRewards, givenRewards, totalReceived, totalGiven] = useMemo(() => {
     if (!user.email || !rewards.length) return [[], [], 0, 0];
-    const received = rewards.filter((reward) => reward.to.email === user.email);
-    const given = rewards.filter((reward) => reward.from.email === user.email);
-    const receivedSumm = received.reduce((total, value) => (total += value.reward), 0);
-    const givenSumm = given.reduce((total, value) => (total += value.reward), 0);
-    return [received, given, receivedSumm, givenSumm];
+    const receivedRewards = rewards.filter((reward) => reward.to.email === user.email);
+    const givenRewards = rewards.filter((reward) => reward.from.email === user.email);
+    const totalReceived = receivedRewards.reduce((total, value) => (total += value.reward), 0);
+    const totalGiven = givenRewards.reduce((total, value) => (total += value.reward), 0);
+    return [receivedRewards, givenRewards, totalReceived, totalGiven];
   }, [rewards, user.email]);
 
   const addReward = (rewardData: IRewardForm) => {
