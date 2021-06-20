@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
 import Header from './Header';
 import Navbar from './Navbar';
 import Spinner from '../shared/Spinner';
+import Feed from '../../pages/Feed';
+import ReceivedRewards from '../../pages/ReceivedRewards';
+import GivenRewards from '../../pages/GivenRewards';
 import Container from '@material-ui/core/Container';
 import { useUser } from '../providers/AuthProvider';
 import { fetchJSON } from '../../utils';
 import { IReward, IRewardForm } from '../../types';
 import useStyles from './Content.style';
 
-const Feed = React.lazy(() => import('../../pages/Feed'));
-const ReceivedRewards = React.lazy(() => import('../../pages/ReceivedRewards'));
-const GivenRewards = React.lazy(() => import('../../pages/GivenRewards'));
 const Page404 = React.lazy(() => import('../../pages/Page404'));
 
 const Content = (): JSX.Element => {
@@ -46,7 +47,12 @@ const Content = (): JSX.Element => {
       <Navbar addReward={addReward} />
       <main className={classes.main}>
         {rewards.length ? (
-          <Switch>
+          <AnimatedSwitch
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+            className={classes.switch}
+          >
             <Redirect exact from="/" to="/feed" />
             <Route path="/feed">
               <Feed rewards={rewards} />
@@ -58,7 +64,7 @@ const Content = (): JSX.Element => {
               <GivenRewards rewards={givenRewards} />
             </Route>
             <Route path="/*" component={Page404} />
-          </Switch>
+          </AnimatedSwitch>
         ) : (
           <Spinner />
         )}

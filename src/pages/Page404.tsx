@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
 
 const Page404 = (): JSX.Element => {
-  return <Container maxWidth="md">404. Page is not found</Container>;
+  return (
+    <div>
+      <h1>404. Page is not found</h1>
+    </div>
+  );
 };
 
 export default Page404;
