@@ -1,11 +1,10 @@
-# Peer Rewards
+# ![icon](https://user-images.githubusercontent.com/26469650/122673740-83d85280-d1da-11eb-98ce-85873d6d8d75.png) Peer Rewards
 
-Client-side application that allows employees to receive and assign awards. The app is available at [peer-rewards.netlify.app](https://peer-rewards.netlify.app/).
+Client-side application that allows employees to receive and assign rewards. The app demo is available at [peer-rewards.netlify.app](https://peer-rewards.netlify.app/).
 
 ![peer-review-screenshot](https://user-images.githubusercontent.com/26469650/122673382-e597bd00-d1d8-11eb-9167-3c08164320e2.png)
 
-
-# Tech stack
+## Tech stack
 
 This is a [React](https://reactjs.org/) application bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for a fast and clean start.
 
@@ -17,27 +16,17 @@ Tests are ran using [React Testing Library](https://testing-library.com/docs/rea
 
 ## Installation and Usage
 
-In the project directory, you can run:
+Clone the repository and install the dependencies, then execute `start` to run the app in development mode:
 
-### `yarn start`
+```
+git clone https://github.com/Azgaar/peer-rewards.git
+cd peer-rewards
+yarn
+yarn start
+```
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**`yarn test`**: launches the test runner in the watch mode.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**`yarn build`**: builds the app for production to the `build` folder.
