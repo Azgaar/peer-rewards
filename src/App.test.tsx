@@ -13,7 +13,7 @@ describe('App', () => {
     expect(spinner).toBeInTheDocument();
   });
 
-  test('renders app with Add Reward button on load', async () => {
+  test('renders Feed page on load', async () => {
     jest
       .spyOn(global, 'fetch')
       .mockResolvedValueOnce(Promise.resolve(new Response(rewards)))
@@ -22,5 +22,6 @@ describe('App', () => {
     renderRoute('/');
     const addRewardButton = await screen.findByRole('button', { name: /add reward/i });
     expect(addRewardButton).toBeInTheDocument();
+    expect(window.location.pathname).toEqual('/feed');
   });
 });
