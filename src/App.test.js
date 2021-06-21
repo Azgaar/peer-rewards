@@ -1,8 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  test('renders spinner when loading', () => {
+    render(<App />);
+    const spinner = screen.getByTestId('spinner');
+    expect(spinner).toBeInTheDocument();
+  });
+
+  test('renders app with Add Reward button on load', async () => {
+    render(<App />);
+    await waitFor(() => {
+      const addRewardButton = screen.getByRole('button', { name: /add reward/i });
+      expect(addRewardButton).toBeInTheDocument();
+    });
+  });
 });
