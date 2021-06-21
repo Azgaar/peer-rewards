@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: '56px',
     width: '56px',
     top: '9px',
+    zIndex: 1,
   },
 }));
 
