@@ -24,7 +24,7 @@ const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
 
         <Grid item sm={2}>
           <Typography variant="body1">Received</Typography>
-          <Typography variant="h5">
+          <Typography variant="h5" data-testid="received">
             {CURRENCY}
             {received}
           </Typography>
@@ -32,13 +32,13 @@ const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
 
         <Grid item sm={2}>
           <Typography variant="body1">Given</Typography>
-          <Typography variant="h5">
+          <Typography variant="h5" data-testid="given">
             {CURRENCY}
             {given}
           </Typography>
         </Grid>
       </Grid>
-      <Typography variant="body2" className={classes.fullName}>
+      <Typography variant="body2" className={classes.fullName} data-testid="username">
         {getFullName(user)}
       </Typography>
     </>

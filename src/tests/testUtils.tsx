@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { render, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 export const renderWithRouter = (ui: ReactElement, { route = '/' } = {}): RenderResult => {
   window.history.pushState({}, 'Test page', route);
