@@ -2,8 +2,14 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   big: {
-    width: theme.spacing(12),
-    height: theme.spacing(12),
+    [theme.breakpoints.up('xs')]: {
+      width: theme.spacing(12),
+      height: theme.spacing(12),
+    },
+    [theme.breakpoints.only('xs')]: {
+      width: theme.spacing(9),
+      height: theme.spacing(9),
+    },
   },
   small: {
     width: theme.spacing(5.5),

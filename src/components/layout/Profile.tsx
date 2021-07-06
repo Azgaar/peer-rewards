@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Theme, Typography } from '@material-ui/core';
 import { IUser } from '../../types';
 import useStyles from './Profile.style';
 import UserAvatar from '../shared/UserAvatar';
 import { getFullName } from '../../utils';
 import { CURRENCY } from '../../config';
+import { useMediaQuery } from '@material-ui/core';
 
 type ProfileProps = {
   user: IUser;
@@ -14,15 +15,21 @@ type ProfileProps = {
 
 const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
   const classes = useStyles();
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xs'));
 
   return (
     <>
-      <Grid container spacing={4} alignItems="center">
-        <Grid item sm={2}>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={4} sm={3} md={2}>
           <UserAvatar user={user} size="big" />
+          {!isMobile && (
+            <Typography variant="body2" className={classes.fullName}>
+              {getFullName(user)}
+            </Typography>
+          )}
         </Grid>
 
-        <Grid item sm={2}>
+        <Grid item xs={4} sm={3} md={2}>
           <Typography variant="body1">Received</Typography>
           <Typography variant="h5">
             {CURRENCY}
@@ -30,7 +37,7 @@ const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
           </Typography>
         </Grid>
 
-        <Grid item sm={2}>
+        <Grid item xs={4} sm={3} md={2}>
           <Typography variant="body1">Given</Typography>
           <Typography variant="h5">
             {CURRENCY}
@@ -38,9 +45,8 @@ const Profile = ({ user, received, given }: ProfileProps): JSX.Element => {
           </Typography>
         </Grid>
       </Grid>
-      <Typography variant="body2" className={classes.fullName}>
-        {getFullName(user)}
-      </Typography>
+
+      {isMobile && <Typography variant="body2">{getFullName(user)}</Typography>}
     </>
   );
 };
