@@ -24,10 +24,6 @@ Tests are ran using [React Testing Library](https://testing-library.com/docs/rea
 
 ## Installation and U
 
-    "husky": "^6.0.0",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.3.1",sage
-
 Clone the repository and install the dependencies, then execute `start` to run the app in development mode:
 
 ```
@@ -38,5 +34,7 @@ yarn start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 **`yarn test`**: launches the test runner in the watch mode.
+
 **`yarn build`**: builds the app for production to the `build` folder.
