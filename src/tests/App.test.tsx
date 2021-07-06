@@ -24,4 +24,16 @@ describe('App', () => {
     expect(addRewardButton).toBeInTheDocument();
     expect(window.location.pathname).toEqual('/feed');
   });
+
+  test('renders 404 page if page is unknown', async () => {
+    jest
+      .spyOn(global, 'fetch')
+      .mockResolvedValueOnce(Promise.resolve(new Response(rewards)))
+      .mockResolvedValueOnce(Promise.resolve(new Response(user)));
+
+    renderRoute('/test_page_not_in_routes');
+    const pageNotFound = await screen.findByRole('heading', { name: /404\. page is not found/i });
+    expect(pageNotFound).toBeInTheDocument();
+    expect(window.location.pathname).toEqual('/test_page_not_in_routes');
+  });
 });
