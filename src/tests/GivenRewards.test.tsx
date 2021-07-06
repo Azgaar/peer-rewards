@@ -9,7 +9,7 @@ const user3 = '{"email":"u3@gmail.com","firstname":"Peter","lastname":"Weiss"}';
 const rewards = `[
   {"id": 0,"from": ${user},"to": ${user2},"reward": 5,"datetime": "2021-06-19T11:15:14.856Z","message": "Thanks0"},
   {"id": 1,"from": ${user2},"to": ${user},"reward": 10,"datetime": "2021-06-19T11:15:14.856Z","message": "Thanks1"},
-  {"id": 0,"from": ${user2},"to": ${user3},"reward": 15,"datetime": "2021-06-19T11:15:14.856Z","message": "Thanks2"}
+  {"id": 2,"from": ${user2},"to": ${user3},"reward": 15,"datetime": "2021-06-19T11:15:14.856Z","message": "Thanks2"}
 ]`;
 const rewardsNumber = 1;
 
