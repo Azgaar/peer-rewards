@@ -6,7 +6,7 @@ Client-side application that allows employees to receive and assign rewards. The
 
 ## Features
 
-- Modern lightweight design
+- Modern responsive design
 - Smooth CSS transitions
 - Optional image avatars
 - Fully-functional routing
