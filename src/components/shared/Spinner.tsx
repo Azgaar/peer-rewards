@@ -5,7 +5,7 @@ const Spinner = (): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <div className={classes.spinner}>
+    <div data-testid="spinner" className={classes.spinner}>
       <div></div>
       <div></div>
       <div></div>
