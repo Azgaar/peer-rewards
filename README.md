@@ -12,11 +12,6 @@ Client-side application that allows employees to receive and assign rewards. The
 - Fully-functional routing
 - Data mockups in .json
 
-## To-do
-
-- Improve test coverage
-- Improve UI for small screens
-
 ## Tech stack
 
 This is a [React](https://reactjs.org/) application bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for a fast and clean start and written in [TypeScript](https://www.typescriptlang.org/).
