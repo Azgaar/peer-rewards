@@ -11,7 +11,6 @@ const userWithImage = {
 const userWithoutImage = { email: 'u@g.co', firstname: 'Te', lastname: 'Ko' };
 const initials = userWithoutImage.firstname[0] + userWithoutImage.lastname[0];
 const small = { width: '40px', height: '40px' };
-const big = { width: '96px', height: '96px' };
 
 afterEach(cleanup);
 
@@ -31,14 +30,10 @@ describe('UserAvatar', () => {
   });
 
   test('should render initials if image is not provided', () => {
-    const { container } = render(<UserAvatar user={userWithoutImage} size="big" />);
+    const { container } = render(<UserAvatar user={userWithoutImage} />);
 
     const div = container.firstChild as ChildNode;
     expect(div).toBeInTheDocument();
     expect(div).toHaveTextContent(initials);
-    expect(div).toHaveStyle(big);
-
-    const img = div.firstChild as ChildNode;
-    expect(img).not.toBeInTheDocument();
   });
 });
