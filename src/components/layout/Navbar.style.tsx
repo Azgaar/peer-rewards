@@ -2,7 +2,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   navbar: {
-    padding: theme.spacing(2, 6, 0),
+    padding: theme.spacing(2, 0, 0, 2),
     '& a': {
       fontWeight: 'bold',
       color: theme.palette.text.secondary,
